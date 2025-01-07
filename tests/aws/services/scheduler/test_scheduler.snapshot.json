@@ -27,5 +27,159 @@
         }
       }
     }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[True-True]": {
+    "recorded-date": "07-01-2025, 13:06:15",
+    "recorded-content": {
+      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[True-False]": {
+    "recorded-date": "07-01-2025, 13:06:29",
+    "recorded-content": {
+      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[False-True]": {
+    "recorded-date": "07-01-2025, 13:06:42",
+    "recorded-content": {
+      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[False-False]": {
+    "recorded-date": "07-01-2025, 13:06:55",
+    "recorded-content": {
+      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_get_schedule_group[True]": {
+    "recorded-date": "07-01-2025, 13:07:09",
+    "recorded-content": {
+      "get-schedule-group": {
+        "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "CreationDate": "<datetime>",
+        "LastModificationDate": "<datetime>",
+        "Name": "<name>",
+        "State": "ACTIVE",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_get_schedule_group[False]": {
+    "recorded-date": "07-01-2025, 13:07:22",
+    "recorded-content": {
+      "get-schedule-group": {
+        "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "CreationDate": "<datetime>",
+        "LastModificationDate": "<datetime>",
+        "Name": "<name>",
+        "State": "ACTIVE",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_get_schedule_group_not_found": {
+    "recorded-date": "07-01-2025, 13:07:35",
+    "recorded-content": {
+      "get-schedule-group-not-found": {
+        "Error": {
+          "Code": "ResourceNotFoundException",
+          "Message": "Schedule group not-existing-name does not exist."
+        },
+        "Message": "Schedule group not-existing-name does not exist.",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 404
+        }
+      }
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_list_schedule_groups[True]": {
+    "recorded-date": "07-01-2025, 13:07:36",
+    "recorded-content": {
+      "list-schedule-groups": {
+        "ScheduleGroups": [
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/default",
+            "Name": "default",
+            "State": "ACTIVE"
+          },
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name-groupe-one>",
+            "CreationDate": "<datetime>",
+            "LastModificationDate": "<datetime>",
+            "Name": "<name-groupe-one>",
+            "State": "ACTIVE"
+          },
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name-groupe-two>",
+            "CreationDate": "<datetime>",
+            "LastModificationDate": "<datetime>",
+            "Name": "<name-groupe-two>",
+            "State": "ACTIVE"
+          }
+        ],
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_list_schedule_groups[False]": {
+    "recorded-date": "07-01-2025, 13:08:02",
+    "recorded-content": {
+      "list-schedule-groups": {
+        "ScheduleGroups": [
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/default",
+            "Name": "default",
+            "State": "ACTIVE"
+          },
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name-groupe-one>",
+            "CreationDate": "<datetime>",
+            "LastModificationDate": "<datetime>",
+            "Name": "<name-groupe-one>",
+            "State": "ACTIVE"
+          },
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name-groupe-two>",
+            "CreationDate": "<datetime>",
+            "LastModificationDate": "<datetime>",
+            "Name": "<name-groupe-two>",
+            "State": "ACTIVE"
+          }
+        ],
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
+    }
+  },
+  "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_list_schedule_groups_not_found": {
+    "recorded-date": "07-01-2025, 13:08:28",
+    "recorded-content": {
+      "list-schedule-groups-not-found": {
+        "ScheduleGroups": [
+          {
+            "Arn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/default",
+            "Name": "default",
+            "State": "ACTIVE"
+          }
+        ],
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
+    }
   }
 }
