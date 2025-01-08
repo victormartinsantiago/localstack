@@ -29,27 +29,51 @@
     }
   },
   "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[True-True]": {
-    "recorded-date": "07-01-2025, 13:06:15",
+    "recorded-date": "08-01-2025, 14:57:39",
     "recorded-content": {
-      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+      "create-schedule-group": {
+        "ScheduleGroupArn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
     }
   },
   "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[True-False]": {
-    "recorded-date": "07-01-2025, 13:06:29",
+    "recorded-date": "08-01-2025, 14:57:52",
     "recorded-content": {
-      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+      "create-schedule-group": {
+        "ScheduleGroupArn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
     }
   },
   "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[False-True]": {
-    "recorded-date": "07-01-2025, 13:06:42",
+    "recorded-date": "08-01-2025, 14:58:06",
     "recorded-content": {
-      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+      "create-schedule-group": {
+        "ScheduleGroupArn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
     }
   },
   "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_create_schedule_group[False-False]": {
-    "recorded-date": "07-01-2025, 13:06:55",
+    "recorded-date": "08-01-2025, 14:58:19",
     "recorded-content": {
-      "create-schedule-group": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>"
+      "create-schedule-group": {
+        "ScheduleGroupArn": "arn:<partition>:scheduler:<region>:111111111111:schedule-group/<name>",
+        "ResponseMetadata": {
+          "HTTPHeaders": {},
+          "HTTPStatusCode": 200
+        }
+      }
     }
   },
   "tests/aws/services/scheduler/test_scheduler.py::TestScheduleGroupe::test_get_schedule_group[True]": {
