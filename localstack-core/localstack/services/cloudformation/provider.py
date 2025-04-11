@@ -1332,3 +1332,6 @@ class CloudformationProvider(CloudformationApi):
             type_summaries.extend(get_listable_types_summaries(pro_plugin_manager))
 
         return ListTypesOutput(TypeSummaries=type_summaries)
+
+
+foo
