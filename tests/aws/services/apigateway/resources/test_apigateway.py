@@ -265,6 +265,7 @@ def test_cfn_deploy_apigateway_models(deploy_cfn_template, snapshot, aws_client)
 
 
 @markers.aws.validated
+@markers.snapshot.skip_snapshot_verify(paths=["$..endpointConfiguration.ipAddressType"])
 def test_cfn_deploy_apigateway_integration(deploy_cfn_template, snapshot, aws_client):
     snapshot.add_transformer(snapshot.transform.key_value("cacheNamespace"))
 
@@ -301,6 +302,7 @@ def test_cfn_deploy_apigateway_integration(deploy_cfn_template, snapshot, aws_cl
         "$.get-stage.lastUpdatedDate",
         "$.get-stage.methodSettings",
         "$.get-stage.tags",
+        "$..endpointConfiguration.ipAddressType",
     ]
 )
 def test_cfn_deploy_apigateway_from_s3_swagger(
@@ -482,6 +484,7 @@ def test_update_apigateway_stage(deploy_cfn_template, snapshot, aws_client):
 
 
 @markers.aws.validated
+@markers.snapshot.skip_snapshot_verify(paths=["$..endpointConfiguration.ipAddressType"])
 def test_api_gateway_with_policy_as_dict(deploy_cfn_template, snapshot, aws_client):
     template = """
     Parameters:

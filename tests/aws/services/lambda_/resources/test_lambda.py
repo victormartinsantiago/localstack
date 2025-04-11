@@ -589,6 +589,7 @@ class TestCfnLambdaIntegrations:
             "$..CodeSize",
             "$..Configuration.Layers",
             "$..Tags",  # missing cloudformation automatic resource tags for the lambda function
+            "$..RevisionId",
         ]
     )
     @markers.aws.validated
@@ -823,6 +824,7 @@ class TestCfnLambdaIntegrations:
             "$..Table.Replicas",
             # stream result
             "$..StreamDescription.CreationRequestDateTime",
+            "$..Table.WarmThroughput",
         ]
     )
     @markers.aws.validated

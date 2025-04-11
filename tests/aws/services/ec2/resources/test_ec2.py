@@ -155,6 +155,7 @@ def test_dhcp_options(aws_client, deploy_cfn_template, snapshot):
         "$..Tags",
         "$..Options.AssociationDefaultRouteTableId",
         "$..Options.PropagationDefaultRouteTableId",
+        "$..Options.SecurityGroupReferencingSupport",
     ]
 )
 def test_transit_gateway_attachment(deploy_cfn_template, aws_client, snapshot):
