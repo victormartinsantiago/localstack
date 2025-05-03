@@ -386,7 +386,13 @@ class CloudformationProviderV2(CloudformationProvider):
 
         before_parameters = stack.resolved_parameters
         after_parameters = None
-        before_template = stack.template
+        before_template = {
+            "Resources": stack.resolved_resources,
+            "Parameters": stack.resolved_parameters,
+            "Outputs": stack.resolved_outputs,
+            # TODO: conditions
+            # TODO: transforms
+        }
         after_template = None
 
         # create a dummy change set
@@ -409,6 +415,7 @@ class CloudformationProviderV2(CloudformationProvider):
 
         def _run(*args):
             try:
+                stack.set_stack_status(StackStatus.DELETE_IN_PROGRESS)
                 change_set_executor.execute()
                 stack.set_stack_status(StackStatus.DELETE_COMPLETE)
             except Exception as e:
