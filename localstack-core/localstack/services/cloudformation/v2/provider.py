@@ -268,6 +268,9 @@ class CloudformationProviderV2(CloudformationProvider):
 
         change_set_executor = ChangeSetModelExecutor(
             change_set,
+            resources=change_set.stack.resolved_resources,
+            outputs=change_set.stack.resolved_outputs,
+            parameters=change_set.stack.resolved_parameters,
         )
 
         def _run(*args):

@@ -44,15 +44,21 @@ class ChangeSetModelExecutor(ChangeSetModelPreproc):
     outputs: Final[dict]
     resolved_parameters: Final[dict]
 
-    def __init__(self, change_set: ChangeSet):
+    def __init__(
+        self,
+        change_set: ChangeSet,
+        resources: dict | None = None,
+        outputs: dict | None = None,
+        parameters: dict | None = None,
+    ):
         super().__init__(
             node_template=change_set.update_graph,
             before_resolved_resources=change_set.stack.resolved_resources,
         )
         self._change_set = change_set
-        self.resources = dict()
-        self.outputs = dict()
-        self.resolved_parameters = dict()
+        self.resources = resources or dict()
+        self.outputs = outputs or dict()
+        self.resolved_parameters = parameters or dict()
 
     # TODO: use a structured type for the return value
     def execute(self) -> ChangeSetModelExecutorResult:
