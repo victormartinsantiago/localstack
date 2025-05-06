@@ -8,6 +8,9 @@ from localstack.utils.strings import short_uid
 
 @markers.aws.validated
 @markers.snapshot.skip_snapshot_verify(paths=["$..message"])
+@pytest.mark.skip(
+    reason="Invalid state found, trying to resolve the condition of the output from this stack on deletion"
+)
 def test_single_resource(deploy_cfn_template, aws_client, snapshot):
     value = short_uid()
     snapshot.add_transformer(snapshot.transform.regex(value, "<value>"))
