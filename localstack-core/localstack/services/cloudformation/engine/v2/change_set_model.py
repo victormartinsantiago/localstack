@@ -1167,7 +1167,7 @@ class ChangeSetModel:
         results = list()
         for obj in objects:
             # TODO: raise errors if not dict
-            if not isinstance(obj, NothingType):
+            if not isinstance(obj, (NothingType, str)):
                 results.append(obj.get(key, Nothing))
             else:
                 results.append(obj)
