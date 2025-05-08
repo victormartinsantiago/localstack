@@ -1166,6 +1166,7 @@ class ChangeSetModel:
     def _safe_access_in(scope: Scope, key: str, *objects: Maybe[dict]) -> tuple[Scope, Maybe[Any]]:
         results = list()
         for obj in objects:
+            # TODO: raise errors if not dict
             if not isinstance(obj, NothingType):
                 results.append(obj.get(key, Nothing))
             else:
