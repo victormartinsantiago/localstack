@@ -268,9 +268,6 @@ class CloudformationProviderV2(CloudformationProvider):
 
         change_set_executor = ChangeSetModelExecutor(
             change_set,
-            resources=change_set.stack.resolved_resources,
-            outputs=change_set.stack.resolved_outputs,
-            parameters=change_set.stack.resolved_parameters,
         )
 
         def _run(*args):
@@ -389,13 +386,7 @@ class CloudformationProviderV2(CloudformationProvider):
 
         before_parameters = stack.resolved_parameters
         after_parameters = None
-        before_template = {
-            "Resources": stack.resolved_resources,
-            "Parameters": stack.resolved_parameters,
-            "Outputs": stack.resolved_outputs,
-            # TODO: conditions
-            # TODO: transforms
-        }
+        before_template = stack.template
         after_template = None
 
         # create a dummy change set
