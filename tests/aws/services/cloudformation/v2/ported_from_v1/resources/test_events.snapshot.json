@@ -1,6 +1,6 @@
 {
   "tests/aws/services/cloudformation/v2/ported_from_v1/resources/test_events.py::test_rule_properties": {
-    "recorded-date": "01-12-2023, 15:03:52",
+    "recorded-date": "08-05-2025, 15:43:11",
     "recorded-content": {
       "outputs": {
         "RuleWithNameArn": "arn:<partition>:events:<region>:111111111111:rule/<event-bus-name>/<custom-rule-name>",
@@ -13,7 +13,7 @@
     }
   },
   "tests/aws/services/cloudformation/v2/ported_from_v1/resources/test_events.py::test_rule_pattern_transformation": {
-    "recorded-date": "08-11-2024, 15:49:06",
+    "recorded-date": "08-05-2025, 15:45:03",
     "recorded-content": {
       "rule": {
         "Arn": "arn:<partition>:events:<region>:111111111111:rule/<name:1>",
@@ -51,7 +51,7 @@
     }
   },
   "tests/aws/services/cloudformation/v2/ported_from_v1/resources/test_events.py::test_event_rule_creation_without_target": {
-    "recorded-date": "22-01-2025, 14:15:04",
+    "recorded-date": "08-05-2025, 15:41:23",
     "recorded-content": {
       "describe_rule": {
         "Arn": "arn:<partition>:events:<region>:111111111111:rule/event-rule-name",
