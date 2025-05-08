@@ -121,7 +121,9 @@ class ChangeSetModelExecutor(ChangeSetModelPreproc):
         self, name: str, before: Optional[PreprocResource], after: Optional[PreprocResource]
     ) -> None:
         if before == after:
-            # unchanged: nothing to do.
+            # unchanged: nothing to do but propagate the previous state to the new state.
+            if before_properties := self._before_resolved_resources.get(name):
+                self.resources[name] = before_properties.copy()
             return
         # TODO: this logic is a POC and should be revised.
         if before is not None and after is not None:
